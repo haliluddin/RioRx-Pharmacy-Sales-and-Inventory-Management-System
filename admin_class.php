@@ -277,69 +277,66 @@ Class Action {
 	}
 
 	function save_receiving(){
-		extract($_POST);
-		$data = " supplier_id = '$supplier_id' ";
-		$data .= ", total_amount = '$tamount' ";
-		
-		if(empty($id)){
-			$ref_no = sprintf("%'08d\n", $ref_no);
-			$i = 1;
+        extract($_POST);
 
-			while($i == 1){
-				$chk = $this->db->query("SELECT * FROM receiving_list where ref_no ='$ref_no'")->num_rows;
-				if($chk > 0){
-					$ref_no = mt_rand(1,99999999);
-					$ref_no = sprintf("%'.08d\n", $ref_no);
-				}else{
-					$i=0;
-				}
-			}
-			$data .= ", ref_no = '$ref_no' ";
-			$save = $this->db->query("INSERT INTO receiving_list set ".$data);
-			$id =$this->db->insert_id;
-			foreach($product_id as $k => $v){
+        $supplier_id_safe = (int) $supplier_id;
+        $total_amount_safe = $this->db->real_escape_string($tamount);
+        $data = "supplier_id = '$supplier_id_safe'";
+        $data .= ", total_amount = '$total_amount_safe'";
 
-				$data = " form_id = '$id' ";
-				$data .= ", product_id = '$product_id[$k]' ";
-				$data .= ", qty = '$qty[$k]' ";
-				$data .= ", expiry_date = '$expiry_date[$k]' ";
-				$data .= ", type = '1' ";
-				$data .= ", stock_from = 'receiving' ";
-				$details = json_encode(array('price'=>$price[$k],'qty'=>$qty[$k]));
-				$data .= ", other_details = '$details' ";
-				$data .= ", remarks = 'Stock from Receiving-".$ref_no."' ";
+        if (empty($id)) {
+            do {
+                $rand = mt_rand(1, 99999999);
+                $ref_no = sprintf("%'08d", $rand);
+                $exists = $this->db->query("SELECT 1 FROM receiving_list WHERE ref_no = '$ref_no'")->num_rows;
+            } while ($exists > 0);
 
-				$save2[]= $this->db->query("INSERT INTO inventory set ".$data);
-			}
-			if(isset($save2)){
-				return 1;
-			}
-		}else{
-			$save = $this->db->query("UPDATE receiving_list set ".$data." where id =".$id);
-			$ids = implode(",",$inv_id);
-			$this->db->query("DELETE FROM inventory where type = 1 and form_id ='$id' and id NOT IN (".$ids.") ");
-			foreach($product_id as $k => $v){
-				$data = " form_id = '$id' ";
-				$data .= ", product_id = '$product_id[$k]' ";
-				$data .= ", qty = '$qty[$k]' ";
-				$data .= ", type = '1' ";
-				$data .= ", stock_from = 'receiving' ";
-				$details = json_encode(array('price'=>$price[$k],'qty'=>$qty[$k]));
-				$data .= ", other_details = '$details' ";
-				$data .= ", remarks = 'Stock from Receiving-".$ref_no."' ";
-				if(!empty($inv_id[$k])){
-									$save2[]= $this->db->query("UPDATE inventory set ".$data." where id=".$inv_id[$k]);
-				}else{
-					$save2[]= $this->db->query("INSERT INTO inventory set ".$data);
-				}
-			}
-			if(isset($save2)){
-				
-				return 1;
-			}
+            $data .= ", ref_no = '$ref_no'";
+            $this->db->query("INSERT INTO receiving_list SET $data");
+            $id = $this->db->insert_id;
+        } else {
+            $id_safe = (int) $id;
+            $this->db->query("UPDATE receiving_list SET $data WHERE id = $id_safe");
 
-		}
-	}
+            if (!empty($inv_id)) {
+                $ids = array_map('intval', $inv_id);
+                $ids_list = implode(',', $ids);
+                $this->db->query("DELETE FROM inventory WHERE type = 1 AND form_id = $id_safe AND id NOT IN ($ids_list)");
+            } else {
+                $this->db->query("DELETE FROM inventory WHERE type = 1 AND form_id = $id_safe");
+            }
+        }
+
+        foreach ($product_id as $k => $v) {
+            $form_id_safe = (int) $id;
+            $prod_id_safe = (int) $product_id[$k];
+            $qty_safe = (float) $qty[$k];
+            $price_safe = (float) $price[$k];
+            $expiry_safe = $this->db->real_escape_string($expiry_date[$k]);
+            $details = json_encode(['price' => $price_safe, 'qty' => $qty_safe]);
+            $remarks = "Stock from Receiving-" . $ref_no;
+
+            $inv_data = [];
+            $inv_data[] = "form_id = '$form_id_safe'";
+            $inv_data[] = "product_id = '$prod_id_safe'";
+            $inv_data[] = "qty = '$qty_safe'";
+            $inv_data[] = "expiry_date = '$expiry_safe'";
+            $inv_data[] = "type = '1'";
+            $inv_data[] = "stock_from = 'receiving'";
+            $inv_data[] = "other_details = '" . $this->db->real_escape_string($details) . "'";
+            $inv_data[] = "remarks = '" . $this->db->real_escape_string($remarks) . "'";
+            $inv_data_str = implode(', ', $inv_data);
+
+            if (!empty($inv_id[$k])) {
+                $inv_id_safe = (int) $inv_id[$k];
+                $this->db->query("UPDATE inventory SET $inv_data_str WHERE id = $inv_id_safe");
+            } else {
+                $this->db->query("INSERT INTO inventory SET $inv_data_str");
+            }
+        }
+
+        return 1;
+    }
 
 	function delete_receiving(){
 		extract($_POST);
