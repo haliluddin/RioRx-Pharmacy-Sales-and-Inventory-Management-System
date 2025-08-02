@@ -26,7 +26,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Save</button>
-								<button class="btn btn-sm btn-default col-sm-3" type="button" onclick="$('#manage-customer').get(0).reset()"> Cancel</button>
+								<button class="btn btn-sm btn-secondary col-sm-3" type="button" onclick="$('#manage-customer').get(0).reset()"> Cancel</button>
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,7 @@
 										<p><small>Discount : <b><?php echo $row['discount'] ?></b></small></p>
 									</td>
 									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_customer" type="button" data-id="<?php echo $row['id'] ?>" data-customer_type="<?php echo $row['customer_type'] ?>" data-discount="<?php echo $row['discount'] ?>" >Edit</button>
+										<button class="btn btn-sm btn-info edit_customer" type="button" data-id="<?php echo $row['id'] ?>" data-customer_type="<?php echo $row['customer_type'] ?>" data-discount="<?php echo $row['discount'] ?>" >Edit</button>
 										<button class="btn btn-sm btn-danger delete_customer" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
 									</td>
 								</tr>

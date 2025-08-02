@@ -6,7 +6,7 @@
 				<div class="card">
 					<div class="card-header d-flex justify-content-between align-items-center">
 						<h5 class="m-0"><b>Receiving List</b><h5>
-						<h4 class="m-0"><button class="btn btn-primary btn-sm" id="new_receiving"><i class="fa fa-plus"></i> New Receiving</button></h4>
+						<h4 class="m-0"><button class="btn btn-success btn-sm" id="new_receiving"><i class="fa fa-plus"></i> New Receiving</button></h4>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered">
@@ -33,7 +33,7 @@
 									<td class=""><?php echo $row['ref_no'] ?></td>
 									<td class=""><?php echo isset($sup_arr[$row['supplier_id']])? $sup_arr[$row['supplier_id']] :'N/A' ?></td>
 									<td class="text-center">
-										<a class="btn btn-sm btn-primary" href="index.php?page=manage_receiving&id=<?php echo $row['id'] ?>">Edit</a>
+										<a class="btn btn-sm btn-info" href="index.php?page=manage_receiving&id=<?php echo $row['id'] ?>">Edit</a>
 										<a class="btn btn-sm btn-danger delete_receiving" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
 									</td>
 								</tr>

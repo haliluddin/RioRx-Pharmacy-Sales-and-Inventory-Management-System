@@ -8,7 +8,7 @@
 				<div class="card">
 					<div class="card-header d-flex justify-content-between align-items-center">
 						<h5 class="m-0"><b>Sales List</b><h5>
-						<h4 class="m-0"><button class="btn btn-primary btn-sm" id="new_sales"><i class="fa fa-plus"></i> New Sales</button></h4>
+						<h4 class="m-0"><button class="btn btn-success btn-sm" id="new_sales"><i class="fa fa-plus"></i> New Sales</button></h4>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered">
@@ -37,7 +37,7 @@
 									<td class=""><?php echo $row['ref_no'] ?></td>
 									<td class=""><?php echo isset($cus_arr[$row['customer_id']])? $cus_arr[$row['customer_id']] :'N/A' ?></td>
 									<td class="text-center">
-										<a class="btn btn-sm btn-primary" href="index.php?page=pos&id=<?php echo $row['id'] ?>">Edit</a>
+										<a class="btn btn-sm btn-info" href="index.php?page=pos&id=<?php echo $row['id'] ?>">Edit</a>
 										<a class="btn btn-sm btn-danger delete_sales" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
 									</td>
 								</tr>

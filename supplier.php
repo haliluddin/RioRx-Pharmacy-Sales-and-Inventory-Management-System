@@ -34,7 +34,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Save</button>
-								<button class="btn btn-sm btn-default col-sm-3" type="button" onclick="$('#manage-supplier').get(0).reset()"> Cancel</button>
+								<button class="btn btn-sm btn-secondary col-sm-3" type="button" onclick="$('#manage-supplier').get(0).reset()"> Cancel</button>
 							</div>
 						</div>
 					</div>
@@ -72,7 +72,7 @@
 										<p><small>Address : <b><?php echo $row['address'] ?></b></small></p>
 									</td>
 									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_supplier" type="button" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['supplier_name'] ?>" data-contact="<?php echo $row['contact'] ?>" data-address="<?php echo $row['address'] ?>" >Edit</button>
+										<button class="btn btn-sm btn-info edit_supplier" type="button" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['supplier_name'] ?>" data-contact="<?php echo $row['contact'] ?>" data-address="<?php echo $row['address'] ?>" >Edit</button>
 										<button class="btn btn-sm btn-danger delete_supplier" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
 									</td>
 								</tr>

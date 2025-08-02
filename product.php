@@ -99,7 +99,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Save</button>
-								<button class="btn btn-sm btn-default col-sm-3" type="button" onclick="frm_reset()"> Cancel</button>
+								<button class="btn btn-sm btn-secondary col-sm-3" type="button" onclick="frm_reset()"> Cancel</button>
 							</div>
 						</div>
 					</div>
@@ -160,7 +160,7 @@
 										
 									</td>
 									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_product" type="button" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-sku="<?php echo $row['sku'] ?>" data-category_id="<?php echo $row['category_id'] ?>" data-description="<?php echo $row['description'] ?>" data-price="<?php echo $row['price'] ?>" data-type_id="<?php echo $row['type_id'] ?>" data-price="<?php echo $row['price'] ?>" data-measurement="<?php echo $row['measurement'] ?>" data-price="<?php echo $row['price'] ?>" >Edit</button>
+										<button class="btn btn-sm btn-info edit_product" type="button" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-sku="<?php echo $row['sku'] ?>" data-category_id="<?php echo $row['category_id'] ?>" data-description="<?php echo $row['description'] ?>" data-price="<?php echo $row['price'] ?>" data-type_id="<?php echo $row['type_id'] ?>" data-price="<?php echo $row['price'] ?>" data-measurement="<?php echo $row['measurement'] ?>" data-price="<?php echo $row['price'] ?>" >Edit</button>
 										<button class="btn btn-sm btn-danger delete_product" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
 									</td>
 								</tr>

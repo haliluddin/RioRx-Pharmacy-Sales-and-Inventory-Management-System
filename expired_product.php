@@ -8,7 +8,7 @@
 				<div class="card">
 					<div class="card-header d-flex justify-content-between align-items-center">
 						<h5 class="m-0"><b>Expired Product List</b></h5>
-						<h4 class="m-0"><button class="btn btn-primary btn-sm" id="new_expired"><i class="fa fa-plus"></i> New Entry</button></h4>
+						<h4 class="m-0"><button class="btn btn-success btn-sm" id="new_expired"><i class="fa fa-plus"></i> New Entry</button></h4>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered">
