@@ -48,7 +48,7 @@ $product = $conn->query("SELECT * FROM product_list  order by name asc");
 			
 				<tr>
 					<th class="text-center">
-						<p><b>Pharmacy Sales and Inventory System</b></p>
+						<p><b>Pharmacy Sales and Inventory Management System</b></p>
 						<p>
 							<b>Unofficial Receipt</b>
 						</p>

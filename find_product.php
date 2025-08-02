@@ -11,15 +11,14 @@
 	}
 </style>
 <div class="container-fluid">
-	<div class="col-lg-12">
-		<div class="row">
-			<div class="form-group col-md-4 ofsset-md-4">
-				<small>Seach for product</small>
-				<input type="text" class="input-sm form-control" id="search">
-			</div>
-		</div>
 	<div class="row">
-		<table class="table table-condensed table-hover" id="plist">
+		<div class="form-group w-25">
+			<small>Seach for product</small>
+			<input type="text" class="input-sm form-control" id="search">
+		</div>
+	</div>
+	<div class="row">
+		<table class="table table-hover table-bordered" id="plist">
 			<colgroup>
 				<col width="25%">
 				<col width="20%">
@@ -35,7 +34,7 @@
 					<th class="">Description</th>
 					<th class="">Price</th>
 					<th class="">Available</th>
-					<th class="">Prescription Need</th>
+					<th class="">Prescription</th>
 				</thead>
 				<tbody>
 					<?php 
@@ -87,12 +86,9 @@
 				</tbody>
 		</table>
 	</div>
-	</div>
 </div>
-<div class="modal-footer display">
-	<div class="col-lg-12">
-		<button class="btn btn-secondary float-right" type="button" data-dismiss="modal">Close</button>
-	</div>
+<div class="display">
+	<button class="btn btn-secondary float-right" type="button" data-dismiss="modal">Close</button>
 </div>
 <script>
 
