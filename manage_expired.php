@@ -5,47 +5,47 @@ if(isset($_GET['iid'])){
 
 
 ?>
-<div class="container-fluid">
+<div class="container-fluid my-4">
 	<div class="col-lg-12">
 		<div class="card">
 			<div class="card-header">
-				<h4>expired</h4>
+				<h5 class="m-0"><b>Manage Expired</b></h5>
 			</div>
 			<div class="card-body">
 				<form action="" id="manage-expired">
 					<input type="hidden" name="id" value="<?php echo isset($_GET['id']) ? $_GET['id'] : '' ?>">
 					<input type="hidden" name="ref_no" value="<?php echo isset($ref_no) ? $ref_no : '' ?>">
-					<div class="col-md-12">
-						<div class="row mb-3">
-								<div class="col-md-4">
-									<label class="control-label">Product</label>
-									<select name="" id="product" class="custom-select browser-default select2">
-										<option value=""></option>
-									<?php 
-									$cat = $conn->query("SELECT * FROM category_list order by name asc");
-										while($row=$cat->fetch_assoc()):
-											$cat_arr[$row['id']] = $row['name'];
-										endwhile;
-									$product = $conn->query("SELECT * FROM product_list  order by name asc");
-									while($row=$product->fetch_assoc()):
-										$prod[$row['id']] = $row;
-									?>
-										<option value="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-measurement="<?php echo $row['measurement'] ?>" data-description="<?php echo $row['description'] ?>"><?php echo $row['name'] . ' | ' . $row['sku'] ?></option>
-									<?php endwhile; ?>
-									</select>
-									<small><a href="javascript:void(0)" id="search_prod">Search product in details.</a></small>
-								</div>
-								<div class="col-md-2">
-									<label class="control-label">Qty</label>
-									<input type="number" class="form-control text-right" step="any" id="qty" >
-								</div>
-								<div class="col-md-3">
-									<label class="control-label">&nbsp</label>
-									<button class="btn btn-block btn-sm btn-primary" type="button" id="add_list"><i class="fa fa-plus"></i> Add to List</button>
-								</div>
-
-
+					
+					<div class="row mb-4">
+						<div class="col-md-4">
+							<label class="control-label">Product</label>
+							<select name="" id="product" class="custom-select browser-default select2">
+								<option value=""></option>
+							<?php 
+							$cat = $conn->query("SELECT * FROM category_list order by name asc");
+								while($row=$cat->fetch_assoc()):
+									$cat_arr[$row['id']] = $row['name'];
+								endwhile;
+							$product = $conn->query("SELECT * FROM product_list  order by name asc");
+							while($row=$product->fetch_assoc()):
+								$prod[$row['id']] = $row;
+							?>
+								<option value="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-measurement="<?php echo $row['measurement'] ?>" data-description="<?php echo $row['description'] ?>"><?php echo $row['name'] . ' | ' . $row['sku'] ?></option>
+							<?php endwhile; ?>
+							</select>
+							<small><a href="javascript:void(0)" id="search_prod">Search product in details.</a></small>
 						</div>
+						<div class="col-md-3">
+							<label class="control-label">Qty</label>
+							<input type="number" class="text-right border border-secondary rounded px-2 w-100" step="any" id="qty" >
+						</div>
+						<div class="col-md-3">
+							<label class="control-label">&nbsp</label>
+							<button class="btn btn-block btn-sm btn-success" type="button" id="add_list"><i class="fa fa-plus"></i> Add to List</button>
+						</div>
+
+					</div>
+					<div class="col-md-12">
 						<div class="row">
 							<table class="table table-bordered" id="list">
 								<colgroup>
@@ -160,7 +160,7 @@ if(isset($_GET['iid'])){
 		$('#pay_modal').modal('show')
 	})
 	$('#search_prod').click(function(){
-		uni_modal("Find Available Product.","find_product.php","large")
+		uni_modal("Find Available Product","find_product.php","large")
 	})
 	$(document).ready(function(){
 		if('<?php echo isset($id) ?>' == 1){
