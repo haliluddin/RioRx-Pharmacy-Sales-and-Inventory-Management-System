@@ -3,13 +3,13 @@
 <div class="container-fluid">
 	
 	<div class="col-lg-12">
-		<div class="row">
+		<div class="row my-4">
 			<!-- FORM Panel -->
 			<div class="col-md-4">
 			<form action="" id="manage-category">
 				<div class="card">
 					<div class="card-header">
-						    Medicine Type Form
+						    <h5 class="m-0">New Medicine Type</h5>
 				  	</div>
 					<div class="card-body">
 							<input type="hidden" name="id">
@@ -37,7 +37,7 @@
 			<div class="col-md-8">
 				<div class="card">
 					<div class="card-header">
-						<b>Medicine type List</b>
+						<h5 class="m-0"><b>Medicine Type List</b></h5>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered table-hover">

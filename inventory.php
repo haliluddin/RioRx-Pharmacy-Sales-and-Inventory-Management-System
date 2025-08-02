@@ -1,11 +1,11 @@
 <?php include 'db_connect.php' ?>
 <div class="container-fluid">
 	<div class="col-lg-12">
-		<div class="row">
+		<div class="row my-4">
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<h4><b>Inventory</b></h4>
+						<h5 class="m-0"><b>Inventory</b></h5>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered">

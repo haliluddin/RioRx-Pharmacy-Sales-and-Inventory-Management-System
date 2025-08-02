@@ -3,13 +3,13 @@
 <div class="container-fluid">
 	
 	<div class="col-lg-12">
-		<div class="row">
+		<div class="row my-4">
 			<!-- FORM Panel -->
 			<div class="col-md-4">
 			<form action="" id="manage-customer">
 				<div class="card">
 					<div class="card-header">
-						    Customer Form
+						    <h5 class="m-0">New Customer</h5>
 				  	</div>
 					<div class="card-body">
 							<input type="hidden" name="id">
@@ -38,6 +38,9 @@
 			<!-- Table Panel -->
 			<div class="col-md-8">
 				<div class="card">
+					<div class="card-header">
+						<h5 class="m-0"><b>Customer List</b></h5>
+					</div>
 					<div class="card-body">
 						<table class="table table-bordered table-hover">
 							<thead>

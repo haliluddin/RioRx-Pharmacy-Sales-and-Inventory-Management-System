@@ -3,33 +3,31 @@
 <div class="container-fluid">
 	
 	<div class="col-lg-12">
-		<div class="row">
+		<div class="row my-4">
 			<!-- FORM Panel -->
 			<div class="col-md-4">
 			<form action="" id="manage-supplier">
 				<div class="card">
 					<div class="card-header">
-						    Supplier Form
+						<h5 class="m-0">New Supplier</h5>
 				  	</div>
 					<div class="card-body">
-							<input type="hidden" name="id">
-							<div class="form-group">
-								<label class="control-label">Supplier</label>
-								<input type="text" class="form-control" name="name">
-							</div>
-							
-					</div>
-					<div class="card-body">
-							<div class="form-group">
-								<label class="control-label">Contact</label>
-								<input type="text" class="form-control" name="contact">
-							</div>
-					</div>
-					<div class="card-body">
-							<div class="form-group">
-								<label class="control-label">Address</label>
-								<textarea class="form-control" cols="30" rows="3" name="address"></textarea>
-							</div>
+
+						<input type="hidden" name="id">
+						<div class="form-group">
+							<label class="control-label">Supplier</label>
+							<input type="text" class="form-control" name="name">
+						</div>	
+
+						<div class="form-group">
+							<label class="control-label">Contact</label>
+							<input type="text" class="form-control" name="contact">
+						</div>
+
+						<div class="form-group">
+							<label class="control-label">Address</label>
+							<textarea class="form-control" cols="30" rows="3" name="address"></textarea>
+						</div>
 					</div>
 							
 					<div class="card-footer">
@@ -49,7 +47,7 @@
 			<div class="col-md-8">
 				<div class="card">
 					<div class="card-header">
-						<b>Supplier List</b>
+						<h5 class="m-0"><b>Supplier List</b></h5>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered table-hover">

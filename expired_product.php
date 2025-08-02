@@ -3,12 +3,12 @@
 	<div class="col-lg-12">
 		<div class="row">
 		</div>
-		<div class="row">
+		<div class="row my-4">
 			<div class="col-md-12">
 				<div class="card">
-					<div class="card-header">
-						<b>Exprired Product List</b>
-			<button class="col-md-2 float-right btn btn-primary btn-sm" id="new_expired"><i class="fa fa-plus"></i> New Entry</button>
+					<div class="card-header d-flex justify-content-between align-items-center">
+						<h5 class="m-0"><b>Expired Product List</b></h5>
+						<h4 class="m-0"><button class="btn btn-primary btn-sm" id="new_expired"><i class="fa fa-plus"></i> New Entry</button></h4>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered">
@@ -31,8 +31,8 @@
 									<td class=""><?php echo date("M d, Y",strtotime($row['date_created'])) ?></td>
 									<td class=""><?php echo date("M d, Y",strtotime($row['date_expired'])) ?></td>
 									<td class="">
-										<p>SKU: <b><?php echo $row['sku'] ?></b></p>
-										<p>Name: <b><?php echo $row['name'] ?> <sup><?php echo $row['measurement'] ?></sup></b></p>
+										<p class="m-0">SKU: <b><?php echo $row['sku'] ?></b></p>
+										<p class="m-0">Name: <b><?php echo $row['name'] ?> <sup><?php echo $row['measurement'] ?></sup></b></p>
 									</td>
 									<td class=""><?php echo $row['qty'] ?></td>
 									<td class="text-center">

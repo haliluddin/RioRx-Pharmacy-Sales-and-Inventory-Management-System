@@ -3,12 +3,12 @@
 	<div class="col-lg-12">
 		<div class="row">
 		</div>
-		<div class="row">
+		<div class="row my-4">
 			<div class="col-md-12">
 				<div class="card">
-					<div class="card-header">
-						<b>Sales List</b>
-			<button class="col-md-2 float-right btn btn-primary btn-sm" id="new_sales"><i class="fa fa-plus"></i> New Sales</button>
+					<div class="card-header d-flex justify-content-between align-items-center">
+						<h5 class="m-0"><b>Sales List</b><h5>
+						<h4 class="m-0"><button class="btn btn-primary btn-sm" id="new_sales"><i class="fa fa-plus"></i> New Sales</button></h4>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered">

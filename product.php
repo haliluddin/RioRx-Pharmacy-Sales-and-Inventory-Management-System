@@ -27,23 +27,22 @@
 <div class="container-fluid">
 	
 	<div class="col-lg-12">
-		<div class="row">
+		<div class="row my-4">
 			<!-- FORM Panel -->
 			<div class="col-md-4">
 			<form action="" id="manage-product">
 				<div class="card">
 					<div class="card-header">
-						    Product Form
+						<h5 class="m-0">New Product</h5>
 				  	</div>
 					<div class="card-body">
-							<input type="hidden" name="id">
-							<div class="form-group">
-								<label class="control-label">SKU</label>
-								<input type="text" class="form-control" name="sku" value="<?php echo $sku ?>">
-							</div>
-							
-					</div>
-					<div class="card-body">
+
+						<input type="hidden" name="id">
+						<div class="form-group">
+							<label class="control-label">SKU</label>
+							<input type="text" class="form-control" name="sku" value="<?php echo $sku ?>">
+						</div>
+
 						<div class="form-group">
 							<label class="control-label">Category</label>
 							<select name="category_id[]" id="" class="custom-select browser-default select2" multiple="multiple">
@@ -113,7 +112,7 @@
 			<div class="col-md-8">
 				<div class="card">
 					<div class="card-header">
-						<b>Product List</b>
+						<h5 class="m-0"><b>Product List</b></h5>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered table-hover">

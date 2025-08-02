@@ -1,15 +1,12 @@
 <?php include 'db_connect.php' ?>
 <div class="container-fluid">
 	<div class="col-lg-12">
-		<div class="row">
-			
-		</div>
-		<div class="row">
+		<div class="row my-4">
 			<div class="col-md-12">
 				<div class="card">
-					<div class="card-header">
-						<b>Receiving List</b>
-							<button class="col-md-2 float-right btn btn-primary btn-sm" id="new_receiving"><i class="fa fa-plus"></i> New Receiving</button>
+					<div class="card-header d-flex justify-content-between align-items-center">
+						<h5 class="m-0"><b>Receiving List</b><h5>
+						<h4 class="m-0"><button class="btn btn-primary btn-sm" id="new_receiving"><i class="fa fa-plus"></i> New Receiving</button></h4>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered">
